@@ -1,0 +1,737 @@
+@import "ripple";
+@import "triangle";
+/*工具类*/
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clearfix::after {
+  /*设置添加的子元素的内容为空*/
+  content: "";
+  /*设置添加的子元素为块级元素*/
+  display: block;
+  /*设置添加的子元素的高度为0*/
+  height: 0;
+  /*设置添加的子元素看不见*/
+  visibility: hidden;
+  /*给添加的子元素设置clear: both;*/
+  clear: both;
+}
+
+.clearfix {
+  /*兼容IE6*/
+  *zoom: 1;
+}
+
+.center() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hCenter() {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.vCenter() {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+/*工具类end*/
+/*设置颜色变量*/
+@baseColor: #e69800;
+
+body {
+  font: 12px/1.5 '\5FAE\8F6F\96C5\9ED1', Tahoma, '\5b8b\4f53', sans-serif;
+  color: #666;
+
+  a {
+    color: #666;
+  }
+}
+
+
+.toolbar {
+  width: 100%;
+  height: 40px;
+  border-top: 1px solid #c9c9c9;
+  border-bottom: 1px solid #c9c9c9;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1999;
+
+  .toolbar-in {
+    width: 970px;
+    height: 100%;
+    margin: 0 auto;
+    // 版心背景颜色
+    //background: skyblue;
+    position: relative;
+
+    li {
+
+      &:nth-child(1) {
+        width: 220px;
+        height: 40px;
+        background: url("../images/icons-top.png") no-repeat 0 -40px;
+        position: relative;
+        z-index: 999;
+
+        a {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &:nth-child(2) {
+        .big-image {
+          position: absolute;
+          left: 0;
+          top: 0;
+          display: none;
+        }
+      }
+
+      &:nth-child(2) {
+        &:hover {
+          .big-image {
+            display: block;
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        line-height: 40px;
+        margin-left: 20px;
+
+        i {
+          display: inline-block;
+          width: 11px;
+          height: 11px;
+          background: url("../images/icons-top.png") no-repeat -150px -134px;
+          vertical-align: middle;
+        }
+
+        a:hover {
+          color: orangered;
+
+          i {
+            background-position: -170px -134px;
+          }
+        }
+      }
+
+      &:nth-child(4) {
+        line-height: 40px;
+        padding-left: 25px;
+        background: url("../images/platform-logo.png") no-repeat left center;
+
+        a:hover {
+          color: orange;
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  width: 100%;
+  height: 88px;
+  background: url("../images/bg_top.png");
+  position: fixed;
+  left: 0;
+  top: 42px;
+  z-index: 10;
+
+  .nav-in {
+    width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    // 版心的背景颜色
+    //background: pink;
+
+    h1 {
+      a {
+        display: inline-block;
+        height: 100%;
+        line-height: 88px;
+
+        img {
+          width: 129px;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    ul {
+      li {
+        float: left;
+        width: 105px;
+        text-align: center;
+        line-height: 88px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #ccc;
+
+        a:hover {
+          color: @baseColor;
+        }
+
+        &:nth-child(3) {
+          a {
+            color: @baseColor;
+          }
+        }
+
+        &:nth-child(4) {
+          a {
+            color: @baseColor;
+          }
+        }
+      }
+    }
+
+    div {
+      width: 140px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      background: @baseColor;
+      margin-top: 24px;
+
+      a {
+        font-size: 14px;
+        font-weight: bold;
+        color: #fff;
+      }
+    }
+  }
+}
+
+/*第一屏*/
+.section-one {
+  background: url("../images/bg_section1.jpg") no-repeat center center;
+  //为了适配更大的显示器
+  background-size: cover;
+
+  video {
+    width: 100%;
+    height: 100%;
+    //background: red;
+    object-fit: cover;
+  }
+
+  .play {
+    width: 81px;
+    height: 81px;
+    background: url("../images/icons.png") no-repeat 0 0;
+    .center();
+
+    a {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  img {
+    .hCenter();
+    bottom: 50px;
+  }
+}
+
+/*第二屏*/
+.section-two {
+  background: url("../images/bg_section2.jpg") no-repeat;
+  background-size: cover;
+  overflow: hidden;
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .info {
+    height: 200px;
+    width: 540px;
+    background: url("../images/icons.png")no-repeat -248px -217px;
+    .center();
+
+    p {
+      position: absolute;
+      left: 40px;
+      bottom: -30px;
+      color: whitesmoke;
+    }
+  }
+
+  .ripple {
+    position: absolute;
+    left: 60%;
+    top: 60%;
+    background: none;
+  }
+}
+
+/*第三屏*/
+.section-three {
+  background: url("../images/bg_section3.jpg") no-repeat;
+  background-size: cover;
+  overflow: hidden;
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .info {
+    height: 200px;
+    width: 540px;
+    background: url("../images/icons.png")no-repeat -793px -217px;
+    .center();
+
+    p {
+      position: absolute;
+      left: 40px;
+      bottom: -30px;
+      color: whitesmoke;
+    }
+  }
+
+  .ripple {
+    position: absolute;
+    left: 60%;
+    top: 60%;
+    background: none;
+  }
+}
+
+/*第四屏*/
+.section-four {
+  .title {
+    width: 727px;
+    height: 81px;
+    background: url("../images/icons.png") no-repeat 0 -425px;
+    .hCenter();
+    top: 20%;
+  }
+
+  .weather {
+    position: absolute;
+    left: 20%;
+    bottom: 20%;
+    text-align: center;
+    //设置宽度,让文字换行
+    width: 225px;
+
+    i {
+      display: block;
+      width: 114px;
+      height: 78px;
+      background: url("../images/icons.png") no-repeat 0 -768px;
+      //使图片居中
+      margin: 0 auto;
+    }
+
+    b {
+      font-size: 20px;
+      color: @baseColor;
+    }
+
+    span {
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: @baseColor;
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: @baseColor;
+    }
+  }
+
+  .terrain {
+    position: absolute;
+    left: 70%;
+    bottom: 20%;
+    text-align: center;
+    //设置宽度,让文字换行
+    width: 225px;
+
+    i {
+      display: block;
+      width: 120px;
+      height: 78px;
+      background: url("../images/icons.png") no-repeat -113px -686px;
+      //使图片居中
+      margin: 0 auto;
+    }
+
+    b {
+      font-size: 20px;
+      color: #fff;
+    }
+
+    span {
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: @baseColor;
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #fff;
+    }
+  }
+
+  ul {
+    width: 100%;
+    height: 100%;
+    //清除浮动
+    overflow: hidden;
+
+    li {
+      float: left;
+      width: 33%;
+      height: 100%;
+      //执行缓动动画
+      transition: all 0.3s ease-in-out 0s;
+      position: relative;
+      overflow: hidden;
+      background: black;
+
+      img {
+        position: absolute;
+        top: 0;
+        transition: all 0.5s ease-in-out 0.3s;
+        opacity: 0.6;
+      }
+
+      h3 {
+        width: 93px;
+        height: 68px;
+        background: url("../images/icons.png") no-repeat -238px -685px;
+        .center();
+        transition: all 0.3s linear 0s;
+      }
+
+
+      &:nth-child(1) {
+        //background: black;
+
+        img {
+          left: -180px;
+        }
+      }
+
+      &:nth-child(2) {
+        width: 34%;
+        //background: black;
+
+        img {
+          left: -10%;
+        }
+
+        h3 {
+          background-position: -336px -685px;
+        }
+      }
+
+      &:nth-child(3) {
+        //background: black;
+
+        img {
+          right: -180px;
+        }
+
+        h3 {
+          background-position: -433px -685px;
+        }
+      }
+    }
+  }
+}
+
+/*第五屏*/
+.section-five {
+  background: url("../images/bg_section5.jpg") no-repeat;
+  background-size: cover;
+  overflow: hidden;
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .info {
+    div {
+      width: 370px;
+      height: 82px;
+      background: url("../images/icons.png") no-repeat;
+      position: relative;
+
+      &:nth-child(1) {
+        background-position: 0 -509px;
+        left: -50px;
+      }
+
+      &:nth-child(2) {
+        background-position: -377px -509px;
+        left: 50px;
+        top: 20px;
+      }
+    }
+
+    .center();
+
+    p {
+      position: absolute;
+      bottom: -50px;
+      color: whitesmoke;
+    }
+  }
+
+  .ripple {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+  }
+}
+
+/*第六屏*/
+.section-six {
+  background: url("../images/bg_section6.jpg") no-repeat;
+  background-size: cover;
+
+  .one {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    /*该属性定义了鼠标指针放在一个元素边界范围内时所用的光标形状*/
+    cursor: pointer;
+
+    video {
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      .vCenter();
+      right: -460px;
+      display: none;
+    }
+
+    &:hover {
+      video {
+        display: block;
+      }
+    }
+  }
+
+  .two {
+    position: absolute;
+    top: 70%;
+    left: 58%;
+    /*该属性定义了鼠标指针放在一个元素边界范围内时所用的光标形状*/
+    cursor: pointer;
+
+    video {
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      .vCenter();
+      left: -460px;
+      display: none;
+    }
+
+    &:hover {
+      video {
+        display: block;
+      }
+    }
+  }
+}
+
+
+.footer-in {
+  width: 1200px;
+  height: 160px;
+  margin: 0 auto;
+  padding-top: 20px;
+
+  .footer-left {
+    line-height: 160px;
+
+    a {
+      width: 180px;
+      height: 35px;
+      display: inline-block;
+      background: url("../images/footer-logo.png") no-repeat;
+    }
+
+    span {
+      display: inline-block;
+      width: 66px;
+      height: 56px;
+      background: url("../images/footer-icons.png") no-repeat -627px -172px;
+    }
+  }
+
+  .footer-right {
+    padding-left: 50px;
+
+    p {
+      line-height: 25px;
+    }
+  }
+
+}
+
+
+/*自定义菜单*/
+#myMenu {
+  background: url("./../images/menu.png") no-repeat;
+  width: 31px;
+  height: 700px;
+  position: fixed;
+  left: 20px;
+  top: 160px;
+  z-index: 999;
+  display: none;
+
+  li {
+    position: absolute;
+    left: 31px;
+    width: 20px;
+    height: 50px;
+    overflow: hidden;
+    transition: all 0.3s linear 0s;
+
+    a {
+      line-height: 50px;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+
+      i {
+        .triangle(Right, 6px, @baseColor);
+        margin-left: 15px;
+      }
+
+      div {
+        width: 165px;
+        height: 50px;
+        background: url("./../images/icons.png") no-repeat -115px 0px;
+        line-height: 30px;
+        padding-left: 15px;
+        box-sizing: border-box;
+        //不换行
+        white-space: nowrap;
+        font-size: 18px;
+        color: #fff;
+      }
+    }
+
+    &:nth-child(2) {
+      top: 20px;
+    }
+
+    &:nth-child(3) {
+      top: 175px;
+
+      div {
+        background-position: -285px 0px;
+      }
+    }
+
+    &:nth-child(4) {
+      top: 330px;
+
+      div {
+        background-position: -455px 0px;
+      }
+    }
+
+    &:nth-child(5) {
+      top: 480px;
+
+      div {
+        background-position: -625px 0px;
+      }
+    }
+
+    &:nth-child(6) {
+      top: 635px;
+
+      div {
+        background-position: -795px 0px;
+      }
+    }
+
+    &.active {
+      width: 215px;
+
+      a {
+        color: @baseColor;
+      }
+    }
+
+    &:hover {
+      width: 215px;
+
+      a {
+        color: @baseColor;
+      }
+    }
+  }
+
+  .menu-up, .menu-down {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 0;
+    display: block;
+  }
+
+  .menu-up {
+    top: 0;
+  }
+
+  .menu-down {
+    bottom: 0;
+  }
+}
+
+/*提示图标*/
+.tips {
+  width: 25px;
+  height: 80px;
+  background: url("../images/icons.png") no-repeat -85px 0px;
+  .hCenter();
+  bottom: 30px;
+  z-index: 2;
+}
+
+
+
+
+
+

@@ -1,0 +1,649 @@
+.ripple {
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+.ripple span {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 24px;
+  color: orangered;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /*infinite:无限执行*/
+  animation: rippleSport1 1s 0s linear infinite;
+  z-index: 3;
+}
+.ripple b {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.ripple b:nth-of-type(1) {
+  animation: rippleSport2 1s 0s linear infinite;
+}
+.ripple b:nth-of-type(2) {
+  animation: rippleSport3 1s 0s linear infinite;
+}
+@keyframes rippleSport1 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.2;
+  }
+}
+@keyframes rippleSport2 {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0.2;
+    transform: translate(-50%, -50%) scale(3);
+  }
+}
+@keyframes rippleSport3 {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(2);
+  }
+}
+/*工具类*/
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clearfix::after {
+  /*设置添加的子元素的内容为空*/
+  content: "";
+  /*设置添加的子元素为块级元素*/
+  display: block;
+  /*设置添加的子元素的高度为0*/
+  height: 0;
+  /*设置添加的子元素看不见*/
+  visibility: hidden;
+  /*给添加的子元素设置clear: both;*/
+  clear: both;
+}
+.clearfix {
+  /*兼容IE6*/
+  *zoom: 1;
+}
+/*工具类end*/
+/*设置颜色变量*/
+body {
+  font: 12px/1.5 '\5FAE\8F6F\96C5\9ED1', Tahoma, '\5b8b\4f53', sans-serif;
+  color: #666;
+}
+body a {
+  color: #666;
+}
+.toolbar {
+  width: 100%;
+  height: 40px;
+  border-top: 1px solid #c9c9c9;
+  border-bottom: 1px solid #c9c9c9;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1999;
+}
+.toolbar .toolbar-in {
+  width: 970px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.toolbar .toolbar-in li:nth-child(1) {
+  width: 220px;
+  height: 40px;
+  background: url("../images/icons-top.png") no-repeat 0 -40px;
+  position: relative;
+  z-index: 999;
+}
+.toolbar .toolbar-in li:nth-child(1) a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.toolbar .toolbar-in li:nth-child(2) .big-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
+.toolbar .toolbar-in li:nth-child(2):hover .big-image {
+  display: block;
+}
+.toolbar .toolbar-in li:nth-child(3) {
+  line-height: 40px;
+  margin-left: 20px;
+}
+.toolbar .toolbar-in li:nth-child(3) i {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  background: url("../images/icons-top.png") no-repeat -150px -134px;
+  vertical-align: middle;
+}
+.toolbar .toolbar-in li:nth-child(3) a:hover {
+  color: orangered;
+}
+.toolbar .toolbar-in li:nth-child(3) a:hover i {
+  background-position: -170px -134px;
+}
+.toolbar .toolbar-in li:nth-child(4) {
+  line-height: 40px;
+  padding-left: 25px;
+  background: url("../images/platform-logo.png") no-repeat left center;
+}
+.toolbar .toolbar-in li:nth-child(4) a:hover {
+  color: orange;
+}
+.nav {
+  width: 100%;
+  height: 88px;
+  background: url("../images/bg_top.png");
+  position: fixed;
+  left: 0;
+  top: 42px;
+  z-index: 10;
+}
+.nav .nav-in {
+  width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+}
+.nav .nav-in h1 a {
+  display: inline-block;
+  height: 100%;
+  line-height: 88px;
+}
+.nav .nav-in h1 a img {
+  width: 129px;
+  vertical-align: middle;
+}
+.nav .nav-in ul li {
+  float: left;
+  width: 105px;
+  text-align: center;
+  line-height: 88px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ccc;
+}
+.nav .nav-in ul li a:hover {
+  color: #e69800;
+}
+.nav .nav-in ul li:nth-child(3) a {
+  color: #e69800;
+}
+.nav .nav-in ul li:nth-child(4) a {
+  color: #e69800;
+}
+.nav .nav-in div {
+  width: 140px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background: #e69800;
+  margin-top: 24px;
+}
+.nav .nav-in div a {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+/*第一屏*/
+.section-one {
+  background: url("../images/bg_section1.jpg") no-repeat center center;
+  background-size: cover;
+}
+.section-one video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.section-one .play {
+  width: 81px;
+  height: 81px;
+  background: url("../images/icons.png") no-repeat 0 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.section-one .play a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.section-one img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 50px;
+}
+/*第二屏*/
+.section-two {
+  background: url("../images/bg_section2.jpg") no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+.section-two video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.section-two .info {
+  height: 200px;
+  width: 540px;
+  background: url("../images/icons.png") no-repeat -248px -217px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.section-two .info p {
+  position: absolute;
+  left: 40px;
+  bottom: -30px;
+  color: whitesmoke;
+}
+.section-two .ripple {
+  position: absolute;
+  left: 60%;
+  top: 60%;
+  background: none;
+}
+/*第三屏*/
+.section-three {
+  background: url("../images/bg_section3.jpg") no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+.section-three video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.section-three .info {
+  height: 200px;
+  width: 540px;
+  background: url("../images/icons.png") no-repeat -793px -217px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.section-three .info p {
+  position: absolute;
+  left: 40px;
+  bottom: -30px;
+  color: whitesmoke;
+}
+.section-three .ripple {
+  position: absolute;
+  left: 60%;
+  top: 60%;
+  background: none;
+}
+/*第四屏*/
+.section-four .title {
+  width: 727px;
+  height: 81px;
+  background: url("../images/icons.png") no-repeat 0 -425px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20%;
+}
+.section-four .weather {
+  position: absolute;
+  left: 20%;
+  bottom: 20%;
+  text-align: center;
+  width: 225px;
+}
+.section-four .weather i {
+  display: block;
+  width: 114px;
+  height: 78px;
+  background: url("../images/icons.png") no-repeat 0 -768px;
+  margin: 0 auto;
+}
+.section-four .weather b {
+  font-size: 20px;
+  color: #e69800;
+}
+.section-four .weather span {
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: #e69800;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.section-four .weather p {
+  color: #e69800;
+}
+.section-four .terrain {
+  position: absolute;
+  left: 70%;
+  bottom: 20%;
+  text-align: center;
+  width: 225px;
+}
+.section-four .terrain i {
+  display: block;
+  width: 120px;
+  height: 78px;
+  background: url("../images/icons.png") no-repeat -113px -686px;
+  margin: 0 auto;
+}
+.section-four .terrain b {
+  font-size: 20px;
+  color: #fff;
+}
+.section-four .terrain span {
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: #e69800;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.section-four .terrain p {
+  color: #fff;
+}
+.section-four ul {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.section-four ul li {
+  float: left;
+  width: 33%;
+  height: 100%;
+  transition: all 0.3s ease-in-out 0s;
+  position: relative;
+  overflow: hidden;
+  background: black;
+}
+.section-four ul li img {
+  position: absolute;
+  top: 0;
+  transition: all 0.5s ease-in-out 0.3s;
+  opacity: 0.6;
+}
+.section-four ul li h3 {
+  width: 93px;
+  height: 68px;
+  background: url("../images/icons.png") no-repeat -238px -685px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s linear 0s;
+}
+.section-four ul li:nth-child(1) img {
+  left: -180px;
+}
+.section-four ul li:nth-child(2) {
+  width: 34%;
+}
+.section-four ul li:nth-child(2) img {
+  left: -10%;
+}
+.section-four ul li:nth-child(2) h3 {
+  background-position: -336px -685px;
+}
+.section-four ul li:nth-child(3) img {
+  right: -180px;
+}
+.section-four ul li:nth-child(3) h3 {
+  background-position: -433px -685px;
+}
+/*第五屏*/
+.section-five {
+  background: url("../images/bg_section5.jpg") no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+.section-five video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.section-five .info {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.section-five .info div {
+  width: 370px;
+  height: 82px;
+  background: url("../images/icons.png") no-repeat;
+  position: relative;
+}
+.section-five .info div:nth-child(1) {
+  background-position: 0 -509px;
+  left: -50px;
+}
+.section-five .info div:nth-child(2) {
+  background-position: -377px -509px;
+  left: 50px;
+  top: 20px;
+}
+.section-five .info p {
+  position: absolute;
+  bottom: -50px;
+  color: whitesmoke;
+}
+.section-five .ripple {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+}
+/*第六屏*/
+.section-six {
+  background: url("../images/bg_section6.jpg") no-repeat;
+  background-size: cover;
+}
+.section-six .one {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  /*该属性定义了鼠标指针放在一个元素边界范围内时所用的光标形状*/
+  cursor: pointer;
+}
+.section-six .one video {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -460px;
+  display: none;
+}
+.section-six .one:hover video {
+  display: block;
+}
+.section-six .two {
+  position: absolute;
+  top: 70%;
+  left: 58%;
+  /*该属性定义了鼠标指针放在一个元素边界范围内时所用的光标形状*/
+  cursor: pointer;
+}
+.section-six .two video {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -460px;
+  display: none;
+}
+.section-six .two:hover video {
+  display: block;
+}
+.footer-in {
+  width: 1200px;
+  height: 160px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+.footer-in .footer-left {
+  line-height: 160px;
+}
+.footer-in .footer-left a {
+  width: 180px;
+  height: 35px;
+  display: inline-block;
+  background: url("../images/footer-logo.png") no-repeat;
+}
+.footer-in .footer-left span {
+  display: inline-block;
+  width: 66px;
+  height: 56px;
+  background: url("../images/footer-icons.png") no-repeat -627px -172px;
+}
+.footer-in .footer-right {
+  padding-left: 50px;
+}
+.footer-in .footer-right p {
+  line-height: 25px;
+}
+/*自定义菜单*/
+#myMenu {
+  background: url("../images/menu.png") no-repeat;
+  width: 31px;
+  height: 700px;
+  position: fixed;
+  left: 20px;
+  top: 160px;
+  z-index: 999;
+  display: none;
+}
+#myMenu li {
+  position: absolute;
+  left: 31px;
+  width: 20px;
+  height: 50px;
+  overflow: hidden;
+  transition: all 0.3s linear 0s;
+}
+#myMenu li a {
+  line-height: 50px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+#myMenu li a i {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid solid solid solid;
+  border-width: 6px;
+  border-color: transparent transparent transparent #e69800;
+  margin-left: 15px;
+}
+#myMenu li a div {
+  width: 165px;
+  height: 50px;
+  background: url("../images/icons.png") no-repeat -115px 0px;
+  line-height: 30px;
+  padding-left: 15px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  font-size: 18px;
+  color: #fff;
+}
+#myMenu li:nth-child(2) {
+  top: 20px;
+}
+#myMenu li:nth-child(3) {
+  top: 175px;
+}
+#myMenu li:nth-child(3) div {
+  background-position: -285px 0px;
+}
+#myMenu li:nth-child(4) {
+  top: 330px;
+}
+#myMenu li:nth-child(4) div {
+  background-position: -455px 0px;
+}
+#myMenu li:nth-child(5) {
+  top: 480px;
+}
+#myMenu li:nth-child(5) div {
+  background-position: -625px 0px;
+}
+#myMenu li:nth-child(6) {
+  top: 635px;
+}
+#myMenu li:nth-child(6) div {
+  background-position: -795px 0px;
+}
+#myMenu li.active {
+  width: 215px;
+}
+#myMenu li.active a {
+  color: #e69800;
+}
+#myMenu li:hover {
+  width: 215px;
+}
+#myMenu li:hover a {
+  color: #e69800;
+}
+#myMenu .menu-up,
+#myMenu .menu-down {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: 0;
+  display: block;
+}
+#myMenu .menu-up {
+  top: 0;
+}
+#myMenu .menu-down {
+  bottom: 0;
+}
+/*提示图标*/
+.tips {
+  width: 25px;
+  height: 80px;
+  background: url("../images/icons.png") no-repeat -85px 0px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+  z-index: 2;
+}
