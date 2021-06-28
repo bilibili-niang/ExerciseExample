@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>test</title>
+    <link rel="stylesheet" href="bootstrap4/css/swiper.css">
+    <link rel="stylesheet" href="bootstrap4/css/swiper.animate.min.css">
+    <style type="text/less">
+        .section2-bottom {
+            width: 70%;
+            margin: 0 auto;
+            padding: 100px 0;
+
+            .swiper-container {
+                width: 100%;
+                //注意点:百分比单位是相对于当前父元素的,如果父元素没有高度,那么设置100%也是没有高度的
+                //vw是视口(浏览器可视区域)单位
+                //注意点:vw单位是永远相对于视口宽度的
+                height: 34vw;
+                border-radius: 35px;
+                overflow: hidden;
+
+                .swiper-slide {
+                    position: relative;
+
+                    img {
+                        position: absolute;
+                    }
+
+                    &:nth-child(1) {
+                        background: #ffbdc6;
+
+                        img:nth-child(1) {
+                            width: 36%;
+                            left: 15%;
+                            bottom: -40%;
+                            z-index: 1;
+                        }
+
+                        img:nth-child(2) {
+                            width: 48%;
+                            left: 30%;
+                            bottom: -60%;
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        background: #ace3e5;
+
+                        img:nth-child(1) {
+                            width: 36%;
+                            left: 40%;
+                            bottom: 40%;
+                        }
+
+                        img:nth-child(2) {
+                            left: 25%;
+                            top: 40%;
+                            width: 48%;
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        background: #e0daf5;
+
+                        img:nth-child(1) {
+                            width: 34%;
+                            left: 30%;
+                            bottom: -40%;
+                        }
+
+                        img:nth-child(2) {
+                            width: 38%;
+                            left: 41%;
+                            bottom: -30%;
+                        }
+                    }
+
+                    &:nth-child(4) {
+                        background: #bdbdbd;
+
+                        img:nth-child(1) {
+                            width: 25%;
+                            left: 27%;
+                            bottom: -30%;
+                        }
+
+                        img:nth-child(2) {
+                            width: 25%;
+                            left: 45%;
+                            bottom: -30%;
+                        }
+                    }
+                }
+
+                .swiper-pagination {
+                    position: absolute;
+                    width: auto;
+                    left: auto;
+                    bottom: 10%;
+                    right: 10%;
+
+                    .my-bullet {
+                        display: inline-block;
+                        width: 1.3vw;
+                        height: 1.3vw;
+                        border-radius: 50%;
+                        background: black;
+                        margin: 0 5px;
+
+                        &:nth-child(1) {
+                            color: #ff6b29;
+                            background: #ff6b29;
+                        }
+
+                        &:nth-child(2) {
+                            color: #16c196;
+                            background: #16c196;
+                        }
+
+                        &:nth-child(3) {
+                            color: #9676ff;
+                            background: #9676ff;
+                        }
+
+                        &:nth-child(4) {
+                            color: #434040;
+                            background: #434040;
+                        }
+
+                    }
+
+                    .my-bullet-active {
+                        border: 3px solid #fff;
+                        box-sizing: border-box;
+                        box-shadow: 3px 3px 10px;
+                    }
+                }
+
+                .swiper-line {
+                    width: 4vw;
+                    height: 3px;
+                    background: whitesmoke;
+                    position: absolute;
+                    left: 5%;
+                    top: 10%;
+                    z-index: 666;
+                }
+
+                .swiper-name, .swiper-num {
+                    font-size: 40px;
+                    height: 45px;
+                    line-height: 45px;
+                    overflow: hidden;
+                    color: #fff;
+                    position: absolute;
+                    left: 5%;
+                    top: 15%;
+                    z-index: 666;
+
+                    span {
+                        display: block;
+                        position: relative;
+                        top: 0px;
+                    }
+                }
+
+                .swiper-num {
+                    left: auto;
+                    top: 5%;
+                    right: 5%;
+                }
+            }
+        }
+
+        @keyframes mySlideInUp {
+            0% {
+                transform: translateY(20%);
+                visibility: visible;
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .mySlideInUp {
+            animation-name: mySlideInUp
+        }
+
+        @keyframes mySlideDown {
+            0% {
+                transform: translateY(-20%);
+                visibility: visible;
+                opacity: 0;
+            }
+
+            100% {
+                -ms-transform: translateY(0);
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .mySlideDown {
+            animation-name: mySlideDown
+        }
+
+    </style>
+    <script src="bootstrap4/js/less.js"></script>
+    <script src="bootstrap4/js/swiper.js"></script>
+    <script src="bootstrap4/js/swiper.animate1.0.3.min.js"></script>
+    <script src="bootstrap4/js/jquery-3.1.1.js"></script>
+</head>
+<body>
+<div class="section2-bottom">
+    <div class="swiper-container">
+        <p class="swiper-line"></p>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/orange_left.png" class="ani" swiper-animate-effect="mySlideInUp">
+                <img src="images/orange_right.png" class="ani" swiper-animate-effect="mySlideInUp"
+                     swiper-animate-delay="0.1s"
+                >
+            </div>
+            <div class="swiper-slide">
+                <img src="images/green_left.png" class="ani" swiper-animate-effect="mySlideDown">
+                <img src="images/green_right.png" class="ani" swiper-animate-effect="mySlideInUp"
+                     swiper-animate-delay="0.1s"
+                >
+            </div>
+            <div class="swiper-slide">
+                <img src="images/purple_left.png" class="ani" swiper-animate-effect="mySlideInUp">
+                <img src="images/purple_right.png" class="ani" swiper-animate-effect="mySlideInUp"
+                     swiper-animate-delay="0.1s"
+                >
+            </div>
+            <div class="swiper-slide">
+                <img src="images/black_left.png" class="ani" swiper-animate-effect="mySlideInUp">
+                <img src="images/black_right.png" class="ani" swiper-animate-effect="mySlideInUp"
+                     swiper-animate-delay="0.1s"
+                >
+            </div>
+
+
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+        <p class="swiper-name">
+            <span> 珊瑚橙 <br> 绮境深林 <br> 仲夏紫 <br> 亮黑色 </span>
+        </p>
+        <p class="swiper-num">
+            <span>01<br>02<br>03<br>04</span>
+        </p>
+    </div>
+</div>
+
+<script>
+    let mySwiper = new Swiper('.swiper-container', {
+        //自动轮播
+        autoplay: {
+            delay: 3000,
+        },
+        // 如果需要分页器
+        pagination: {
+            el: '.swiper-pagination',
+            bulletClass: 'my-bullet',//需设置.my-bullet样式
+            bulletActiveClass: 'my-bullet-active',
+        },
+        on: {
+            init: function () {
+                swiperAnimateCache(this);//隐藏动画元素
+                swiperAnimate(this);//初始化完成开始动画
+            },
+            slideChangeTransitionEnd: function () {
+                swiperAnimate(this);//每个slide切换结束时也运行当前slide动画
+                // console.log(this.activeIndex);
+                let offsetY = this.activeIndex * 45;
+                $(".swiper-name>span").animate({top: -offsetY}, 1000);
+                $(".swiper-num>span").animate({top: -offsetY}, 1000);
+            }
+        }
+    });
+</script>
+</body>
+</html>
