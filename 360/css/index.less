@@ -1,0 +1,262 @@
+/*第一屏*/
+.section-one{
+  .logo{
+    text-align: center;
+    padding-top: 10%;
+    box-sizing: border-box;
+  }
+  .text{
+    text-align: center;
+    margin: 5% 0;
+    img{
+      margin: 0 3%;
+      opacity: 0;
+      transition: all 1s linear 0s;
+    }
+  }
+  .info{
+    text-align: center;
+  }
+  &.current{
+    .text{
+      img{
+        opacity: 1;
+        margin: 0;
+      }
+    }
+  }
+}
+//.section-one .current{}
+//.section-one.current{}
+/*第二屏*/
+.section-two{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  .shield{
+    width: 428px;
+    height: 498px;
+    img{
+      transition: all 1s linear 0s;
+      &:nth-child(1){
+        transform: translate(35px, 78px) rotate(45deg);
+      }
+      &:nth-child(2){
+        transform: translate(135px, 382px) rotate(15deg);
+      }
+      &:nth-child(3){
+        transform: translate(187px, 162px) rotate(15deg);
+      }
+      &:nth-child(4){
+        transform: translate(10px, 162px) rotate(30deg);
+      }
+      &:nth-child(5){
+        transform: translate(465px, 322px) rotate(30deg);
+      }
+      &:nth-child(6){
+        transform: translate(480px, 62px) rotate(90deg);
+      }
+      &:nth-child(7){
+        transform: translate(180px, -305px) rotate(80deg);
+      }
+      &:nth-child(8){
+        transform: translate(150px, -50px) rotate(70deg);
+      }
+      &:nth-child(9){
+        transform: translate(280px, -322px) rotate(60deg);
+      }
+    }
+  }
+  &.current{
+    .shield{
+      img{
+        transform: none;
+      }
+    }
+  }
+}
+/*第三屏*/
+.section-three{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  .rocket{
+    transform: translate(-1000px, 420px);
+    transition: all 1s linear 0s;
+  }
+  &.current{
+    .rocket{
+      transform: translate(-400px, -50px);
+    }
+  }
+}
+/*第四屏*/
+.section-four{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  .search{
+    overflow: hidden;
+    height: 446px;
+    .top{
+      position: relative;
+      img{
+        transform: translateX(-529px);
+        transition: all 1s linear 0s;
+      }
+      .key{
+        width: 0;
+        height: 22px;
+        background: url("./../images/section4_key.png") no-repeat;
+        position: absolute;
+        left: 20px;
+        top: 25px;
+      }
+    }
+    .bottom{
+      height: 0;
+      overflow: hidden;
+      transition: all 1s linear 4s;
+    }
+  }
+  &.current{
+    .search{
+      .top{
+        img{
+          transform: none;
+        }
+        .key{
+          animation: show 2.5s steps(5) 1.5s forwards;
+        }
+      }
+      .bottom{
+        height: 372px;
+      }
+    }
+  }
+}
+@keyframes show {
+  from{
+    width: 0;
+  }
+  to{
+    width: 99px;
+  }
+}
+/*第五屏*/
+.section-five{
+  .info{
+    text-align: center;
+    padding-top: 5%;
+  }
+  .browser{
+    width: 1004px;
+    height: 600px;
+    background: rgba(255,255,255,0.3);
+    position: relative;
+    left: 50%;
+    top: 5%;
+    transform: translateX(-50%);
+    .v-line{
+      display: inline-block;
+      width: 1px;
+      height: 0px;
+      background: #fff;
+      position: absolute;
+      top: 0;
+      &:nth-of-type(1){
+        left: 0;
+        transition: all 1s linear 0s;
+      }
+      &:nth-of-type(2){
+        right: 0;
+        transition: all 1s linear 2s;
+      }
+    }
+    .h-line{
+      display: inline-block;
+      width: 0px;
+      height: 1px;
+      background: #fff;
+      position: absolute;
+      left: 0;
+      &:nth-of-type(1){
+        top: 0;
+        transition: all 1s linear 1s;
+      }
+      &:nth-of-type(2){
+        bottom: 0;
+        transition: all 1s linear 3s;
+      }
+    }
+    .top{
+      position: relative;
+      overflow: hidden;
+      img{
+        transform: translateX(-1004px);
+        transition: all 1s linear 5s;
+      }
+      span{
+        display: inline-block;
+        width: 920px;
+        height: 30px;
+        border: 1px solid #fff;
+        box-sizing: border-box;
+        position: absolute;
+        left: 70px;
+        top: 30px;
+        opacity: 0;
+        transition: all 1s linear 4s;
+      }
+    }
+    .bottom{
+      width: 100%;
+      height: 29px;
+      background: url("./../images/section5_extra.png") no-repeat center right;
+      border-top: 1px solid #fff;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      opacity: 0;
+      transition: all 1s linear 6s;
+    }
+  }
+  &.current{
+    .browser{
+      .v-line{
+        &:nth-of-type(1){
+          height: 600px;
+        }
+        &:nth-of-type(2){
+          height: 600px;
+        }
+      }
+      .h-line{
+        &:nth-of-type(1){
+          width: 1004px;
+        }
+        &:nth-of-type(2){
+          width: 1004px;
+        }
+      }
+      .top{
+        img{
+          transform: none;
+        }
+        span{
+          opacity: 1;
+        }
+      }
+      .bottom{
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+
+
