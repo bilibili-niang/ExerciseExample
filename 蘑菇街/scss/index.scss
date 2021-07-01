@@ -1,0 +1,536 @@
+/*工具类*/
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clearfix::after {
+  /*设置添加的子元素的内容为空*/
+  content: "";
+  /*设置添加的子元素为块级元素*/
+  display: block;
+  /*设置添加的子元素的高度为0*/
+  height: 0;
+  /*设置添加的子元素看不见*/
+  visibility: hidden;
+  /*给添加的子元素设置clear: both;*/
+  clear: both;
+}
+
+.clearfix {
+  /*兼容IE6*/
+  *zoom: 1;
+}
+
+
+body {
+  font: 12px/1.6 tahoma, arial, sans-serif;
+  color: #333;
+  background: #f7f7f7;
+}
+
+.nav {
+  .nav-in {
+    width: 1690px;
+    height: 100%;
+    margin: 0 auto;
+    //background: skyblue;
+  }
+
+  .nav-top {
+    width: 100%;
+    height: 33px;
+    border: 1px solid #ccc;
+    //background: red;
+
+    ul {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      height: 100%;
+
+      li {
+        margin: 0 10px;
+        color: #ccc;
+
+        a {
+          color: #ccc;
+
+          i {
+            color: pink;
+            font-size: 10px;
+            margin-right: 5px;
+          }
+        }
+
+        &:last-child {
+          a {
+            i {
+              color: #ccc;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .nav-bottom {
+    width: 100%;
+    height: 100px;
+    //background: blue;
+
+    .nav-in {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+
+      .logo {
+        img {
+          vertical-align: bottom;
+        }
+      }
+
+      .menu {
+        font-size: 15px;
+        //控制文字与左边图标的间隔
+        margin-left: 30px;
+
+        i {
+          font-size: 20px;
+        }
+      }
+
+      .search {
+        //下面一行代码设置使元素在竖轴上一排,居中
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        height: 100%;
+
+        margin-left: 283px;
+
+        input {
+          border: none;
+          outline: none;
+        }
+
+        input[type=text] {
+          width: 650px;
+          height: 48px;
+          line-height: 48px;
+          background: #f7f7f7;
+          padding-left: 10px;
+          box-sizing: border-box;
+          //设置边框左上角的radio
+          border-top-left-radius: 5px;
+          //设置边框左下角的radio
+          border-bottom-left-radius: 5px;
+        }
+
+        input[type=submit] {
+          width: 58px;
+          height: 48px;
+          background: url("../images/search-btn.png") no-repeat;
+        }
+      }
+
+      .list {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        height: 100%;
+
+        li {
+          margin-left: 30px;
+          text-align: center;
+
+          i {
+            font-size: 30px;
+          }
+        }
+      }
+
+      .login {
+        margin-left: 100px;
+
+        a {
+          color: #333;
+
+          img {
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+
+  margin-bottom: 30px;
+}
+
+.nav2 {
+  z-index: 30;
+  position: fixed;
+  left: 0;
+  top: -100px;
+  transition: all 1s linear 0s;
+  background: #fff;
+
+  .nav-bottom {
+    .menu {
+      visibility: hidden;
+    }
+  }
+}
+
+.main {
+  width: 100%;
+
+  .main-in {
+    width: 1690px;
+    margin: 0 auto;
+    position: relative;
+
+    .item {
+      float: left;
+      padding: 0px 10px;
+
+      .item-box {
+        width: 220px;
+        background: #fff;
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+        left: 0;
+        top: 0;
+        transition: top 0.3s linear 0s;
+
+        .item-top {
+          position: relative;
+
+          & > img {
+            width: 100%;
+          }
+
+          .play {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            z-index: 2;
+          }
+
+          .title {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            padding: 0 10px;
+            box-sizing: border-box;
+            height: 40px;
+            line-height: 40px;
+            color: #fff;
+
+            img {
+              margin-right: 5px;
+              vertical-align: text-bottom;
+            }
+          }
+
+          .mask {
+            display: none;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            ul {
+              position: absolute;
+              top: 10px;
+              right: 10px;
+
+              li {
+                width: 42px;
+                height: 42px;
+                background: url("../images/icons.png") no-repeat;
+
+                &:nth-child(1) {
+                  background-position: -5px -5px;
+                  margin-bottom: 10px;
+
+                  span {
+                    height: 16px;
+                    line-height: 16px;
+                    padding: 0 4px;
+                    border-radius: 8px;
+                    background: #f46;
+                    position: absolute;
+                    top: -4px;
+                    right: -4px;
+                    color: #fff;
+                  }
+                }
+
+                &:nth-child(2) {
+                  background-position: -5px -57px;
+                }
+              }
+            }
+
+            .mask-info {
+              color: #fff;
+              position: absolute;
+              left: 0px;
+              bottom: 0px;
+              padding: 10px;
+
+              .mask-title {
+                height: 40px;
+                line-height: 40px;
+                border-bottom: 1px solid #fff;
+
+                img {
+                  vertical-align: text-bottom;
+                }
+              }
+
+              .mask-des {
+                //使文字超过三行就自动隐藏后面的，使用 .... 来代替
+                //这种方式只会在谷歌浏览器中有用
+                //webkit是指浏览器内核
+                //overflow: hidden;
+                //text-overflow: ellipsis;
+                //display: -webkit-box;
+                //-webkit-line-clamp: 3;
+                //-webkit-box-orient: vertical;
+              }
+            }
+          }
+        }
+
+        .item-bottom {
+          padding: 10px;
+
+          a {
+            float: left;
+            color: #333;
+            background: #ccc;
+            padding: 2px;
+            border-radius: 3px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+
+            img {
+              width: 14px;
+              vertical-align: text-bottom;
+            }
+          }
+
+        }
+      }
+
+      &:hover {
+        .item-box {
+          top: -5px;
+
+          .item-top {
+            .title {
+              display: none;
+            }
+
+            .mask {
+              display: block;
+            }
+          }
+
+          .item-bottom {
+            background: #f1f1f1;
+
+            a {
+              background: #fff;
+            }
+          }
+        }
+      }
+
+    }
+
+    .banner {
+      width: 700px;
+      position: absolute;
+      top: 0;
+      left: 490px;
+      border-radius: 20px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .category {
+      width: 700px;
+      height: 400px;
+      background: url("./../images/bg.gif") no-repeat;
+      background-size: cover;
+      position: absolute;
+      top: 760px;
+      left: 490px;
+
+      .category-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 55px 10px 0 10px;
+        box-sizing: border-box;
+
+        li {
+          width: 112px;
+          height: 112px;
+          background: url("./../images/category.png") no-repeat;
+          background-size: cover;
+          text-align: center;
+          line-height: 170px;
+
+          a {
+            color: #333;
+          }
+        }
+      }
+
+      .category-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 10px;
+        box-sizing: border-box;
+
+        li {
+          width: 120px;
+          height: 30px;
+          line-height: 30px;
+          text-align: center;
+          background: #f1f1f1;
+          margin-bottom: 10px;
+          border-radius: 15px;
+
+          a {
+            color: #333;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+.footer {
+  width: 100%;
+  height: 415px;
+  background: url("./../images/footer-bg.jpg") no-repeat;
+  background-size: cover;
+  margin-top: 50px;
+  padding-top: 50px;
+  padding-bottom: 35px;
+
+  .footer-in {
+    width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    //background: skyblue;
+    color: #fff;
+
+    a {
+      color: #fff;
+    }
+
+    a:hover {
+      color: orange;
+    }
+
+    .footer-logo {
+      text-align: center;
+    }
+
+    .footer-helper {
+      overflow: hidden;
+      margin-top: 50px;
+
+      dl {
+        float: left;
+        width: 300px;
+
+        dt {
+          font-size: 14px;
+          /*为该元素后面添加一个伪元素*/
+          &::after {
+            content: ' ';
+            display: block;
+            width: 30px;
+            height: 1px;
+            background: #fff;
+            margin-bottom: 30px;
+          }
+        }
+
+        dd {
+          line-height: 30px;
+        }
+      }
+    }
+
+    .footer-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+
+      li {
+        margin: 0 15px;
+      }
+    }
+
+    .footer-line {
+      text-align: center;
+      padding: 20px 0;
+      position: relative;
+
+      &::before {
+        content: ' ';
+        display: inline-block;
+        width: 450px;
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &::after {
+        content: ' ';
+        display: inline-block;
+        width: 450px;
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    .footer-copyright {
+    text-align: center;
+    }
+
+
+  }
+
+}
+
+
