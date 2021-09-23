@@ -1,0 +1,1314 @@
+@import "animation";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.headerLimted {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+
+  //height: 10rem;
+  .headerTopAdvance {
+    display: flex;
+    background-color: rgb(93, 93, 93);
+    width: 100%;
+    height: 2rem;
+    color: azure;
+    font-weight: lighter;
+    justify-content: center;
+
+    .headerFontLimted {
+      //display: flex;
+      //flex-direction: column-reverse;
+      text-align: right;
+      //background-color: #3b3333;
+      width: 100%;
+      line-height: 2rem;
+      padding-right: 1rem;
+      font-size: 0.75rem;
+    }
+  }
+
+  .headerAllList {
+    display: flex;
+    background-color: rgb(51, 51, 51);
+    width: 100%;
+    height: 2.5rem;
+    justify-content: center;
+
+    .headerAllListInnerLimted {
+      display: flex;
+      width: 80rem;
+
+      ul {
+        display: flex;
+        color: white;
+        justify-content: center;
+        width: 100%;
+        line-height: 2rem;
+        // background-color: rgba(212, 60, 0, 0.5);
+
+        li {
+          font-weight: lighter;
+          font-size: 0.75rem;
+          text-align: center;
+          display: flex;
+          width: 8%;
+          height: 100%;
+          // background: rebeccapurple;
+
+          a {
+            color: white;
+            text-decoration: none;
+          }
+        }
+
+        li:first-child {
+          a {
+            display: flex;
+            width: 6rem;
+            height: 2rem;
+            background: url("../images/apple.png") no-repeat;
+            background-position: center;
+            background-size: 1.55rem auto;
+          }
+        }
+
+
+        li:nth-last-child(1) {
+          a {
+            display: flex;
+            width: 6rem;
+            height: 2rem;
+            background: url("../images/shoppingBag.png") no-repeat;
+            background-position: center;
+            background-size: 1.55rem auto;
+          }
+        }
+
+        // 商店tag中的第二个隐藏button
+        li:nth-of-type(2) {
+          a:nth-of-type(2) {
+            position: absolute;
+            left: 1rem;
+            z-index: -1;
+
+            // display: none;
+            p {
+              display: inline-block;
+              position: absolute;
+              width: 1.5rem;
+              height: 0.1rem;
+              background-color: whitesmoke;
+            }
+
+            p:nth-of-type(1) {
+              // top: 1rem;
+              margin-top: 1.2rem;
+            }
+
+            p:nth-of-type(2) {
+              // top: 1.4rem;
+              margin-top: 1.2rem;
+            }
+          }
+        }
+
+        li:nth-last-child(2) {
+          a {
+            display: flex;
+            width: 6rem;
+            height: 2rem;
+            background: url("../images/search.png") no-repeat;
+            background-position: center;
+            background-size: 1.55rem auto;
+          }
+
+
+        }
+
+
+      }
+    }
+
+    .hideSection {
+      display: none;
+
+      ul {
+        list-style: none;
+        //list-style-type: none;
+        li {
+          a {
+            color: white;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+
+    @media screen and (max-width: 700px) {
+      .headerAllListInnerLimted {
+        ul {
+          li {
+            display: none;
+          }
+
+          li:nth-of-type(1) {
+            display: flex;
+
+            a {
+              display: flex;
+              width: 6rem;
+              height: 2rem;
+              background: url("../images/apple.png") no-repeat;
+              background-position: center;
+              background-size: 1.55rem auto;
+            }
+          }
+
+          li:nth-of-type(2) {
+            // content: ' ';
+            display: flex;
+            position: absolute;
+            left: 3%;
+            // background-color: red;
+            height: 2.5rem;
+            width: 3rem;
+
+            a:nth-of-type(1) {
+              display: none;
+              // content: ' ';
+            }
+
+            a:nth-of-type(2) {
+              z-index: 1;
+            }
+
+            /*             a:before {
+              display: flex;
+              height: 2rme;
+              width: 2rem;
+              background-color: rebeccapurple;
+            } */
+
+            .hideMenu {
+              display: flex;
+              position: relative;
+              top: 0;
+              left: 0;
+
+              p {
+                display: inline-block;
+                width: 1.5rem;
+                height: 1.2rem;
+                background-color: white;
+              }
+
+            }
+
+          }
+
+
+        }
+      }
+    }
+  }
+}
+
+.fix {
+  position: fixed;
+  top: 0;
+  height: 3rem;
+  width: 200%;
+  z-index: 3;
+  //background: rgba(0, 0, 0, 0.2);
+
+  .bannerContainer {
+    .bannerFirstLink {
+    }
+
+    p {
+      a {
+        color: white;
+      }
+    }
+  }
+
+}
+
+.BiggestBanner {
+  display: flex;
+  //position: fixed;
+  //position: absolute;
+  width: 100%;
+  height: 3rem;
+  //background: rebeccapurple;
+  justify-content: center;
+
+  .bannerContainer {
+    display: flex;
+    width: 70rem;
+    justify-content: space-between;
+    line-height: 3rem;
+    //background-color: #cecaca;
+    //filter: opacity(70%);
+
+    //ios14文字
+    .bannerFirstLink {
+      text-decoration: none;
+      padding: 0 1rem 0 1rem;
+      color: rgb(48, 48, 49);
+      font-weight: 550;
+    }
+
+    p {
+      display: flex;
+
+      a {
+        padding: 0 1rem 0 1rem;
+        text-decoration: none;
+        font-size: 0.08rem;
+      }
+
+      a:hover {
+        color: skyblue;
+      }
+
+      a:nth-of-type(1) {
+        color: gray;
+      }
+
+      a:nth-of-type(2) {
+        color: rgb(48, 48, 49);
+      }
+    }
+
+
+  }
+
+  .bannerContainer:after {
+  }
+}
+
+//毛玻璃背景
+
+.BiggestBanner::before {
+  // background: url("./img/lamb.jpg");
+  background-position: bottom;
+  background-size: cover;
+  display: inline-block;
+  width: 100%;
+  height: 3rem;
+  background-attachment: fixed;
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  filter: blur(5rem);
+  z-index: -1;
+}
+
+
+//中间内容的容器
+.centerContainerLimte {
+  overflow: hidden;
+  //background-size: 100% auto;
+  //background-position: 0%;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .centerContainer {
+    // background: url('../images/background.png')no-repeat;
+    display: flex;
+    width: 75rem;
+    height: 40rem;
+    //background: antiquewhite;
+    padding-top: 6rem;
+    // background: #b3aabd;
+    //左边图片的box
+    justify-content: space-evenly;
+    //左边的iphone图片
+    .containerBackgroundLeft {
+      display: flex;
+      width: 22rem;
+      height: 39rem;
+      //background: #333333;
+      background: url("../images/side_phone_left__vn8db9b65jm6_large.jpg") no-repeat;
+      background-position: 0 0;
+      background-size: cover;
+    }
+
+    //中间的iphone图片
+    .containerBackgroundCenter {
+      background: #5d7c7c;
+      display: flex;
+      width: 22rem;
+      height: 39rem;
+      background: url("../images/iphonebackground.png") no-repeat;
+      background-position: 1.5rem 1rem;
+      background-size: 14.5rem auto;
+
+      .containerBackgroundImg {
+        background: url("../images/hardware__fr6rtkvwpfqm_large.png") no-repeat;
+        background-size: 26em auto;
+        background-position: 0 0;
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+      }
+    }
+
+    .containerBackgroundRight {
+      background: #262c2c;
+      display: flex;
+      width: 22rem;
+      height: 39rem;
+      background: url("../images/side_phone_right__f1hzzwoxg0ya_large.jpg") no-repeat;
+      background-position: 0 0;
+      background-size: cover;
+    }
+
+  }
+
+  //  移动端适配布局:
+  @media screen and (max-width: 700px) {
+    .centerContainer {
+      // background: url('../images/background.png')no-repeat;
+      display: flex;
+      width: 33rem;
+      height: 30rem;
+      margin-top: -4rem;
+      // background: #b3aabd;
+      //左边图片的box
+      justify-content: space-evenly;
+      //左边的iphone图片
+      .containerBackgroundLeft {
+        display: none;
+        width: 12rem;
+        height: 39rem;
+        //background: #333333;
+        background: url("../images/side_phone_left__vn8db9b65jm6_large.jpg") no-repeat;
+        background-position: 0 0;
+        background-size: cover;
+      }
+
+      //中间的iphone图片
+      .containerBackgroundCenter {
+        background: #5d7c7c;
+        display: flex;
+        width: 22rem;
+        height: 39rem;
+        background: url("../images/iphonebackground.png") no-repeat;
+        background-position: center 1rem;
+        background-size: 13.5rem auto;
+
+        .containerBackgroundImg {
+          background: url("../images/hardware__fr6rtkvwpfqm_large.png") no-repeat;
+          background-size: 24rem auto;
+          background-position: 3rem 0rem;
+          display: flex;
+          width: 100%;
+          height: 100%;
+
+        }
+      }
+
+      .containerBackgroundRight {
+        background: #262c2c;
+        display: none;
+        width: 12rem;
+        height: 39rem;
+        background: url("../images/side_phone_right__f1hzzwoxg0ya_large.jpg") no-repeat;
+        background-position: 0 0;
+        background-size: cover;
+      }
+
+    }
+
+  }
+
+  .textContainer {
+    font-size: 24px;
+    display: block;
+    width: 100%;
+    height: 25rem;
+    //background: rebeccapurple;
+
+    h2, h4, h3 {
+      text-align: center;
+      line-height: 3rem;
+    }
+
+    h3, h4 {
+      color: gray;
+    }
+
+    .bigfont {
+      font-size: 60px;
+      line-height: 4.5rem;
+    }
+
+    p {
+      text-align: center;
+      margin-top: 2rem;
+
+      a {
+        text-decoration: none;
+        color: cornflowerblue;
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .textContainer {
+      font-size: 14px;
+      display: block;
+      width: 63rem;
+      height: 25rem;
+      //background: rebeccapurple;
+
+      h2, h4, h3 {
+        text-align: center;
+        line-height: 2rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+      }
+
+      .bigfont {
+        font-size: 35px;
+        line-height: 4.5rem;
+        font-weight: 300;
+      }
+
+      p {
+        text-align: center;
+        margin-top: 2rem;
+
+        a {
+          text-decoration: none;
+          color: cornflowerblue;
+        }
+      }
+    }
+  }
+
+  //使用体验:
+  .secondExperience {
+    width: 100%;
+    display: flex;
+    //width: 100%;
+    background: rgb(202, 202, 205);
+    margin-top: 15rem;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .textContainerExperience {
+      display: flex;
+      width: 75rem;
+      height: 18rem;
+      flex-wrap: wrap;
+      font-size: 26px;
+      margin-left: 3rem;
+
+      h2, h4 {
+        display: flex;
+        width: 100%;
+        line-height: 2.5rem;
+        //font-weight: lighter;
+        font-weight: 200;
+      }
+
+      h2 {
+        font-size: 53px;
+        color: rgb(141, 101, 253);
+        margin-top: 7rem;
+        margin-bottom: 1rem;
+        font-weight: 500;
+      }
+    }
+
+
+    .textContainerWidgets {
+      position: relative;
+      top: 4rem;
+      display: flex;
+      width: 100%;
+      height: 150rem;
+      //height: 100%;
+      //background: #e3dcdc;
+      justify-content: center;
+
+
+      //限制手机手机图片位置
+      .imageBoxLimte {
+        position: relative;
+        width: 75rem;
+        //background: red;
+        /*文字容器*/
+
+        .widgetsTextContainer {
+          display: flex;
+          width: 60rem;
+          height: 14rem;
+          //background: antiquewhite;
+          flex-wrap: wrap;
+          margin-top: 13rem;
+
+          h2 {
+            padding-left: 1rem;
+            display: flex;
+            //width: 15rem;
+            width: 100%;
+            height: 3rem;
+            line-height: 3rem;
+            //background: rebeccapurple;
+            color: rgb(120, 73, 254);
+            font-weight: 500;
+          }
+
+          p:nth-of-type(1) {
+            padding-left: 1rem;
+            display: flex;
+            width: 12rem;
+            height: 16rem;
+
+          }
+        }
+
+
+        //第一张backgroundImage的外框
+        .firstImg {
+          display: flex;
+          position: absolute;
+          width: 26rem;
+          height: 38rem;
+          left: 68%;
+          transform: translateX(-50%);
+          //background: rebeccapurple;
+          top: 6rem;
+          background: url("../images/widgets_2_screen__d4cv9h9pp8wi_large.jpg") no-repeat 6rem 1.5rem;
+          background-size: 15rem auto;
+
+          .firstImgPhoneBox {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            //background-position: center 0;
+            background-size: 28rem auto;
+            background: url("../images/hardware__fr6rtkvwpfqm_large.png") no-repeat 4rem 0;
+          }
+        }
+
+        //第一张图片的右边图片
+        .firstImgRight {
+          display: flex;
+          position: absolute;
+          width: 26rem;
+          height: 38rem;
+          left: 96%;
+          transform: translateX(-50%);
+          //background: rebeccapurple;
+          top: 20rem;
+          background: url("../images/widgets_4_screen__edmr579o1hua_large.jpg") no-repeat 6rem 1.5rem;
+          background-size: 15rem auto;
+
+          .firstImgRightPhoneBox {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            //background-position: center 0;
+            background-size: 28rem auto;
+            background: url("../images/hardware__fr6rtkvwpfqm_large.png") no-repeat 4rem 0;
+          }
+
+        }
+
+        //左边第一个图片
+        .firstLeftImg {
+          display: flex;
+          position: absolute;
+          width: 26rem;
+          height: 38rem;
+          left: 32%;
+          transform: translateX(-50%);
+          //background: rebeccapurple;
+          top: 29rem;
+          background: url("../images/widgets_2_screen__d4cv9h9pp8wi_large.jpg") no-repeat;
+          background-position: 6rem 1.5rem;
+          background-size: 15rem auto;
+
+          .firstLeftImgBox {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            //background-position: center 0;
+            background-size: 28rem auto;
+            background: url("../images/hardware__fr6rtkvwpfqm_large.png") no-repeat 4rem 0;
+          }
+        }
+
+        //左边第二个图片
+        .secondLeftImg {
+          display: flex;
+          position: absolute;
+          width: 26rem;
+          height: 38rem;
+          left: 6%;
+          transform: translateX(-50%);
+          //background: rebeccapurple;
+          top: 41rem;
+          background: url("../images/widgets_3_screen__ejs8wzsihliu_large.jpg") no-repeat;
+          background-position: 6rem 1.5rem;
+          background-size: 15rem auto;
+
+          .secondLeftImgBox {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            //background-position: center 0;
+            background-size: 28rem auto;
+            background: url("../images/hardware__fr6rtkvwpfqm_large.png") no-repeat 4rem 0;
+
+          }
+        }
+
+        //另外文字的容器框
+        .otherTextContainer {
+          display: flex;
+          position: absolute;
+          width: 19rem;
+          height: 18rem;
+          left: 68%;
+          transform: translateX(-50%);
+          top: 45rem;
+          //background: rebeccapurple 6rem 1.5rem;
+          background-size: 15rem auto;
+          font-size: 1.3rem;
+          font-weight: 400;
+        }
+
+        //app资源库
+        .appSource {
+          display: flex;
+          position: absolute;
+          width: 100%;
+          height: 60rem;
+          //background: rebeccapurple;
+          top: 78rem;
+
+          .textContainer_1 {
+            display: flex;
+            position: absolute;
+            width: 19rem;
+            top: -5rem;
+            left: 20rem;
+            //background: red;
+            flex-wrap: wrap;
+
+            h4 {
+              width: 100%;
+              display: flex;
+              color: rgb(121, 73, 254);
+            }
+
+            p {
+              font-weight: 400;
+
+            }
+          }
+
+        }
+
+        // faceId的container
+        .faceId {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          top: 85rem;
+          display: flex;
+          width: 120%;
+          //height: 3rem;
+          //background: red;
+
+          //fadeId的card
+          .hideMask {
+            display: flex;
+            position: absolute;
+            width: 90%;
+            height: 100%;
+            //background: #027FFF;
+            z-index: 2;
+            border-radius: 2rem;
+
+            .maskText {
+              //opacity: 1;
+              opacity: 0;
+              font-size: 1.2rem;
+              font-weight: bold;
+              display: flex;
+              width: 48rem;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+
+            .maskTextChangeOpacity {
+              animation-name: maskTextChangeOpacity;
+              animation-duration: 0.5s;
+              animation-fill-mode: forwards;
+            }
+          }
+
+          .hideMaskChangeZ-index {
+            z-index: -1;
+          }
+
+          .hideMaskColorChange {
+            animation-name: hideMaskColorChange;
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
+          }
+
+          .hideMaskHideAttribute {
+            //display: none;
+            //opacity: 0;
+            z-index: -1;
+          }
+
+          .hideMaskNormalAttribute {
+            //opacity: 1;
+            z-index: 2;
+          }
+
+
+          .cardContainer {
+            background: #FFFFFF;
+            border-radius: 2rem;
+            display: flex;
+            width: 90%;
+            //height: 5rem;
+            flex-wrap: wrap;
+
+            .h3FontColor {
+
+              color: #1D8DFF;
+            }
+
+            h3 {
+              line-height: 2rem;
+              margin: 1rem 1rem 0.5rem 1rem;
+              display: flex;
+              width: 100%;
+              z-index: 3;
+            }
+
+            .imageContainer {
+              //background: rebeccapurple;
+              display: flex;
+              width: 100%;
+              height: 40rem;
+              margin-bottom: 2rem;
+              flex-wrap: nowrap;
+              justify-content: space-between;
+
+              .leftTextContainer {
+                margin-left: 2rem;
+                margin-top: 15rem;
+                font-size: 25px;
+
+                b {
+                  font-size: 20px;
+                  font-weight: bold;
+                  //使文字上标
+                  vertical-align: super
+                }
+              }
+
+              .BackgroundimageContainer {
+                background: url("../images/img.png") no-repeat;
+                display: flex;
+                width: 35rem;
+                height: 40rem;
+              }
+
+              .buttonFlag {
+                display: flex;
+                position: absolute;
+                width: 5rem;
+                height: 5rem;
+                border-radius: 5rem;
+                background: #75757A;
+                right: 12rem;
+                bottom: 2rem;
+                z-index: 5;
+                //margin-top: 25rem;
+                .icon1 {
+                  background: white;
+                  display: flex;
+                  width: 3rem;
+                  height: 0.7rem;
+                  border-radius: 0.5rem;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+
+                }
+
+                .icon2 {
+                  background: white;
+                  display: flex;
+                  width: 0.7rem;
+                  height: 3rem;
+                  border-radius: 0.5rem;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                }
+              }
+
+              .buttonFlagChangeRotate {
+
+                transform: rotate(45deg);
+                transition: transform .4s ease-in-out;
+              }
+            }
+
+          }
+        }
+      }
+
+
+    }
+
+
+  }
+
+  //使用体验的适配
+  @media screen and (max-width: 700px) {
+    .secondExperience {
+      width: 100%;
+      display: flex;
+      //width: 100%;
+      background: rgb(202, 202, 205);
+      margin-top: 15rem;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .textContainerExperience {
+        display: flex;
+        width: 75rem;
+        height: 18rem;
+        flex-wrap: wrap;
+        font-size: 15px;
+        margin-left: 3rem;
+
+        h2, h4 {
+          display: flex;
+          width: 100%;
+          line-height: 2rem;
+          //font-weight: lighter;
+          font-weight: 400;
+        }
+
+        h2 {
+          font-size: 3rem;
+          color: rgb(141, 101, 253);
+          margin-top: 7rem;
+          margin-bottom: 1rem;
+          font-weight: 500;
+        }
+      }
+
+
+      .textContainerWidgets {
+        position: relative;
+        top: 4rem;
+        display: flex;
+        width: 100%;
+        height: 150rem;
+        //height: 100%;
+        //background: #e3dcdc;
+        justify-content: center;
+
+
+        //限制手机手机图片位置
+        .imageBoxLimte {
+          position: relative;
+          width: 75rem;
+          //background: red;
+          /*文字容器*/
+
+          .widgetsTextContainer {
+            display: flex;
+            width: 60rem;
+            height: 14rem;
+            //background: antiquewhite;
+            flex-wrap: wrap;
+            margin-top: 13rem;
+
+            h2 {
+              padding-left: 1rem;
+              display: flex;
+              //width: 15rem;
+              width: 100%;
+              height: 3rem;
+              line-height: 3rem;
+              //background: rebeccapurple;
+              color: rgb(120, 73, 254);
+              font-weight: 500;
+            }
+
+            p:nth-of-type(1) {
+              padding-left: 1rem;
+              display: flex;
+              width: 12rem;
+              height: 16rem;
+
+            }
+          }
+
+
+          //第一张backgroundImage的外框
+          .firstImg {
+            display: flex;
+            position: absolute;
+            width: 26rem;
+            height: 38rem;
+            left: 51%;
+            transform: translateX(-50%);
+            top: -1rem;
+            background: url("../images/widgets_2_screen__d4cv9h9pp8wi_large.jpg") no-repeat 6rem 1.5rem;
+            background-size: 15rem auto;
+
+            .firstImgPhoneBox {
+              display: flex;
+              width: 100%;
+              height: 100%;
+              //background-position: center 0;
+              background-size: 28rem auto;
+              background: url("../images/hardware__fr6rtkvwpfqm_large.png") no-repeat 4rem 0;
+            }
+          }
+
+          //第一张图片的右边图片
+          .firstImgRight {
+            display: none;
+            position: absolute;
+            width: 26rem;
+            height: 38rem;
+            left: 96%;
+            transform: translateX(-50%);
+            //background: rebeccapurple;
+            top: 20rem;
+            background: url("../images/widgets_4_screen__edmr579o1hua_large.jpg") no-repeat 6rem 1.5rem;
+            background-size: 15rem auto;
+
+            .firstImgRightPhoneBox {
+              display: flex;
+              width: 100%;
+              height: 100%;
+              //background-position: center 0;
+              background-size: 28rem auto;
+              background: url("../images/hardware__fr6rtkvwpfqm_large.png") no-repeat 4rem 0;
+            }
+
+          }
+
+          //左边第一个图片
+          .firstLeftImg {
+            display: none;
+            position: absolute;
+            width: 26rem;
+            height: 38rem;
+            left: 32%;
+            transform: translateX(-50%);
+            //background: rebeccapurple;
+            top: 29rem;
+            background: url("../images/widgets_2_screen__d4cv9h9pp8wi_large.jpg") no-repeat;
+            background-position: 6rem 1.5rem;
+            background-size: 15rem auto;
+
+            .firstLeftImgBox {
+              display: flex;
+              width: 100%;
+              height: 100%;
+              //background-position: center 0;
+              background-size: 28rem auto;
+              background: url("../images/hardware__fr6rtkvwpfqm_large.png") no-repeat 4rem 0;
+            }
+          }
+
+          //左边第二个图片
+          .secondLeftImg {
+            display: none;
+            position: absolute;
+            width: 26rem;
+            height: 38rem;
+            left: 6%;
+            transform: translateX(-50%);
+            //background: rebeccapurple;
+            top: 41rem;
+            background: url("../images/widgets_3_screen__ejs8wzsihliu_large.jpg") no-repeat;
+            background-position: 6rem 1.5rem;
+            background-size: 15rem auto;
+
+            .secondLeftImgBox {
+              display: flex;
+              width: 100%;
+              height: 100%;
+              //background-position: center 0;
+              background-size: 28rem auto;
+              background: url("../images/hardware__fr6rtkvwpfqm_large.png") no-repeat 4rem 0;
+
+            }
+          }
+
+          //另外文字的容器框
+          .otherTextContainer {
+            display: flex;
+            position: absolute;
+            width: 19rem;
+            height: 18rem;
+            left: 53%;
+            transform: translateX(-50%);
+            top: 39rem;
+            //background: rebeccapurple 6rem 1.5rem;
+            background-size: 15rem auto;
+            font-size: 1.3rem;
+            font-weight: 400;
+          }
+
+          //app资源库
+          .appSource {
+            display: flex;
+            position: absolute;
+            width: 100%;
+            height: 60rem;
+            //background: rebeccapurple;
+            top: 78rem;
+
+            .textContainer_1 {
+              display: flex;
+              position: absolute;
+              width: 19rem;
+              top: -27rem;
+              left: 22rem;
+              //background: red;
+              flex-wrap: wrap;
+
+              h4 {
+                width: 100%;
+                display: flex;
+                color: rgb(121, 73, 254);
+              }
+
+              p {
+                font-weight: 400;
+
+              }
+            }
+
+          }
+
+          // faceId的container
+          .faceId {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 85rem;
+            display: flex;
+            width: 120%;
+            //height: 3rem;
+            //background: red;
+
+            //fadeId的card
+            .hideMask {
+              display: flex;
+              position: absolute;
+              width: 90%;
+              height: 100%;
+              //background: #027FFF;
+              z-index: 2;
+              border-radius: 2rem;
+
+              .maskText {
+                //opacity: 1;
+                opacity: 0;
+                font-size: 1.2rem;
+                font-weight: bold;
+                display: flex;
+                width: 48rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+
+              .maskTextChangeOpacity {
+                animation-name: maskTextChangeOpacity;
+                animation-duration: 0.5s;
+                animation-fill-mode: forwards;
+              }
+            }
+
+            .hideMaskChangeZ-index {
+              z-index: -1;
+            }
+
+            .hideMaskColorChange {
+              animation-name: hideMaskColorChange;
+              animation-duration: 0.5s;
+              animation-fill-mode: forwards;
+            }
+
+            .hideMaskHideAttribute {
+              //display: none;
+              //opacity: 0;
+              z-index: -1;
+            }
+
+            .hideMaskNormalAttribute {
+              //opacity: 1;
+              z-index: 2;
+            }
+
+
+            .cardContainer {
+              background: #FFFFFF;
+              border-radius: 2rem;
+              display: flex;
+              width: 90%;
+              //height: 5rem;
+              flex-wrap: wrap;
+
+              .h3FontColor {
+
+                color: #1D8DFF;
+              }
+
+              h3 {
+                line-height: 2rem;
+                margin: 1rem 1rem 0.5rem 1rem;
+                display: flex;
+                width: 100%;
+                z-index: 3;
+              }
+
+              .imageContainer {
+                //background: rebeccapurple;
+                display: flex;
+                width: 100%;
+                height: 40rem;
+                margin-bottom: 2rem;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+
+                .leftTextContainer {
+                  margin-left: 2rem;
+                  margin-top: 15rem;
+                  font-size: 25px;
+
+                  b {
+                    font-size: 20px;
+                    font-weight: bold;
+                    //使文字上标
+                    vertical-align: super
+                  }
+                }
+
+                .BackgroundimageContainer {
+                  background: url("../images/img.png") no-repeat;
+                  display: flex;
+                  width: 35rem;
+                  height: 40rem;
+                }
+
+                .buttonFlag {
+                  display: flex;
+                  position: absolute;
+                  width: 5rem;
+                  height: 5rem;
+                  border-radius: 5rem;
+                  background: #75757A;
+                  right: 12rem;
+                  bottom: 2rem;
+                  z-index: 5;
+                  //margin-top: 25rem;
+                  .icon1 {
+                    background: white;
+                    display: flex;
+                    width: 3rem;
+                    height: 0.7rem;
+                    border-radius: 0.5rem;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                  }
+
+                  .icon2 {
+                    background: white;
+                    display: flex;
+                    width: 0.7rem;
+                    height: 3rem;
+                    border-radius: 0.5rem;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                  }
+                }
+
+                .buttonFlagChangeRotate {
+
+                  transform: rotate(45deg);
+                  transition: transform .4s ease-in-out;
+                }
+              }
+
+            }
+          }
+        }
+
+
+      }
+
+
+    }
+
+  }
+
+}
+
+.fontColorChange {
+  animation-name: textColorChange;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+
+}
+
+.toggleColorReverse {
+  animation-name: backgroundChangeReverse;
+  animation-duration: 0.5s;
+  //animation-fill-mode: forwards;
+  //transform: ;
+}
+
+.buttonRotateReverse {
+  transform: rotate(0deg);
+  transition: transform .5s ease-in-out;
+}

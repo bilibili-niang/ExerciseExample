@@ -1,0 +1,15 @@
+@keyframes degChange1 {
+  to {
+    transform: rotate(45deg);
+  }
+}
+@keyframes degChange2 {
+  to {
+    transform: rotate(-45deg);
+  }
+}
+@keyframes menuList {
+  to {
+    top: 0;
+  }
+}
