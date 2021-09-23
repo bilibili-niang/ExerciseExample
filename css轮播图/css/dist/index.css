@@ -1,0 +1,75 @@
+.limted {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.limted .containerLimted {
+  height: 10rem;
+  display: flex;
+  width: 22rem;
+  overflow: hidden;
+  background-color: black;
+}
+.limted .containerLimted .theRoulousChartContainer {
+  background: #605f61;
+  height: 10rem;
+  display: flex;
+}
+.limted .containerLimted .theRoulousChartContainer li {
+  display: flex;
+  width: 22rem;
+  height: 10rem;
+}
+.limted .containerLimted .theRoulousChartContainer .firstImage {
+  background: url(../images/1.png) no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.limted .containerLimted .theRoulousChartContainer .secondImage {
+  background: url(../images/2.png) no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.limted .containerLimted .theRoulousChartContainer .thirdImage {
+  background: url(../images/3.png) no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.limted .containerLimted .theRoulousChartContainer .fourthImage {
+  background: url(../images/4.png) no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.limted .containerLimted .theRoulousChartContainer .endImage {
+  background: url(../images/1.png) no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.limted .revolveControler {
+  animation: revolve 16s ease-out infinite;
+}
+.limted .revolveControler:hover {
+  animation-play-state: paused;
+}
+@keyframes revolve {
+  0%,
+  15% {
+    margin-left: -88rem;
+  }
+  25%,
+  35% {
+    margin-left: -66rem;
+  }
+  45%,
+  55% {
+    margin-left: -44rem;
+  }
+  65%,
+  75% {
+    margin-left: -22rem;
+  }
+  85%,
+  100% {
+    margin-left: 0rem;
+  }
+}

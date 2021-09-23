@@ -1,0 +1,115 @@
+.limted {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+
+  .containerLimted {
+    height: 10rem;
+    display: flex;
+    width: 22rem;
+    // height: 10rem;
+    overflow: hidden;
+    background-color: black;
+
+
+    .theRoulousChartContainer {
+      background: rgb(96, 95, 97);
+      // display: inline-block;
+      height: 10rem;
+      // flex-wrap: nowrap;
+      // position: relative;
+      display: flex;
+
+      li {
+        // flex-shrink: inherit;
+        // position: absolute;
+        // float: left;
+        // display: inline-block;
+        display: flex;
+        width: 22rem;
+        height: 10rem;
+        // background-size: cover;
+        // background-color: rgb(13, 29, 99);
+      }
+
+
+      .firstImage {
+        // background-color: black;
+        background: url(../images/1.png)no-repeat;
+        background-position: center center;
+        background-size: cover;
+
+      }
+
+      .secondImage {
+        // background-color: aqua;
+        background: url(../images/2.png)no-repeat;
+        background-position: center center;
+        background-size: cover;
+      }
+
+      .thirdImage {
+        // background-color: rgb(91, 119, 211);
+        background: url(../images/3.png)no-repeat;
+        background-position: center center;
+        background-size: cover;
+
+      }
+
+      .fourthImage {
+        // background-color: rgb(138, 72, 72);
+        background: url(../images/4.png)no-repeat;
+        background-position: center center;
+        background-size: cover;
+
+      }
+
+      .endImage {
+        // background-color: black;
+        background: url(../images/1.png)no-repeat;
+        background-position: center center;
+        background-size: cover;
+
+      }
+    }
+  }
+
+  .revolveControler {
+    animation: revolve 16s ease-out infinite;
+    // animation: revolve 16s linear ease-in-out;
+  }
+
+  .revolveControler:hover {
+    animation-play-state: paused;
+  }
+
+}
+
+@keyframes revolve {
+
+  0%,
+  15% {
+    margin-left: -88rem;
+  }
+
+  25%,
+  35% {
+    margin-left: -66rem;
+  }
+
+  45%,
+  55% {
+    margin-left: -44rem;
+  }
+
+  65%,
+  75% {
+    margin-left: -22rem;
+  }
+
+  85%,
+  100% {
+    margin-left: 0rem;
+  }
+}
