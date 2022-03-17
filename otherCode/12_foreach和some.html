@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>foreach和some</title>
+</head>
+<body>
+查看控制台
+<script>
+    const arr = ['小红', '大红', '大黄', 'blue'];
+    //foreach循环一旦开始,无法被停止
+    arr.forEach((item, index) => {
+        console.log('object')
+        if (item === '大红') {
+            console.log(index)
+        }
+    })
+    //some在找到指定项之后,可以通过return true来终止some循环:
+    arr.some((item, index) => {
+        console.log('some')
+        if (item === '大红') {
+            console.log(index)
+            return true
+        }
+    })
+</script>
+
+</body>
+</html>
