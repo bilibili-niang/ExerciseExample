@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>title</title>
+    <style>
+        .child {
+            --backgroundColor: red;
+            --littleFontsize: 60px;
+        }
+
+        .father {
+            background-color: palegoldenrod;
+            color: rgb(207, 156, 156);
+            font-size: var(--littleFontsize);
+        }
+
+        .father .child {
+            background-color: var(--backgroundColor);
+            font-size: var(--littleFontsize);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="father">
+        这里是父亲的文字
+        <div class="child">
+            这里是儿子的文字
+        </div>
+    </div>
+
+</body>
+</html>
