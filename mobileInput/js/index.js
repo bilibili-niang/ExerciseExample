@@ -45,21 +45,25 @@ if (isAndroid()) {
         const newInnerHeight = window.innerHeight;
         if (innerHeight > newInnerHeight) {
             // 键盘弹出事件处理
-            alert("android 键盘弹窗事件");
+            // alert("android 键盘弹窗事件");
+            $('.android').html('键盘抬起')
 
         } else {
             // 键盘收起事件处理
-            alert("android 键盘收起事件处理")
+            // alert("android 键盘收起事件处理")
+            $('.android').html('键盘收起')
         }
     });
 } else if (isIOS()) {
     window.addEventListener('focusin', () => {
         // 键盘弹出事件处理
-        alert("iphone 键盘弹出事件处理")
+        // alert("iphone 键盘弹出事件处理")
+        $('.ios').html('键盘收起')
     });
     window.addEventListener('focusout', () => {
         // 键盘收起事件处理
-        alert("iphone 键盘收起事件处理")
+        // alert("iphone 键盘收起事件处理")
+        $('.ios').html('键盘收起')
 
     });
 }
