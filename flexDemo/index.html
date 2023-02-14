@@ -1,0 +1,137 @@
+<!DOCTYPE html >
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>紧贴底部的页脚</title>
+    <style>
+        .one, .two {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+        }
+
+        .con {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .one {
+            text-align: center;
+            display: flex;;
+            flex-flow: column;
+            height: 100vh;
+        }
+
+        .one header {
+            background: #abcdef;
+            padding: 10px 0;
+
+        }
+
+        /*任何一个元素只要设置了一个大于0的flex值，就将获得可伸缩的特性；flex的值负责控制多个可伸缩元素之间的尺寸分配比例。4:2 同 2:1是一样的效果，因为真正起作用的是它们的数值比例。*/
+        .one main {
+            background: #abcdef;
+            margin: 20px;
+            padding: 10px;
+            flex: 1;
+        }
+
+        .one footer {
+            background: #abcdef;
+            color: yellow;
+            padding: 1px;
+            text-shadow: 1px 1px green;
+        }
+
+        .two {
+            text-align: center;
+            display: flex;;
+            flex-flow: column;
+            height: 100vh;
+        }
+
+        .two header {
+            background: #abcdef;
+            padding: 10px 0;
+
+        }
+
+        /*任何一个元素只要设置了一个大于0的flex值，就将获得可伸缩的特性；flex的值负责控制多个可伸缩元素之间的尺寸分配比例。4:2 同 2:1是一样的效果，因为真正起作用的是它们的数值比例。*/
+        .two main {
+            background: #abcdef;
+            margin: 20px;
+            padding: 10px;
+        }
+
+        .two footer {
+            background: #abcdef;
+            color: yellow;
+            padding: 1px;
+            text-shadow: 1px 1px green;
+        }
+
+
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+<div class="con">
+
+    <div class="one">
+        <header>flex: 1;</header>
+        <main>
+            Free fonts have met their match. We know how hard it is to find quality freeware that is licensed for
+            commercial
+            work. We've done the hard work, hand-selecting these typefaces and presenting them in an easy-to-use format.
+            Here
+            are some of our favorites Free fonts have met their match. We know how hard it is to find quality freeware
+            that
+            is
+            licensed for commercial work. We've done the hard work, hand-selecting these typefaces and presenting them
+            in an
+            easy-to-use format. Here are some of our favorites。
+        </main>
+        <footer>
+            <p>Site name footer</p>
+            <p>Site name footer</p>
+        </footer>
+    </div>
+    |
+    <div class="two">
+        <header>没有flex: 1;</header>
+        <main>
+            Free fonts have met their match. We know how hard it is to find quality freeware that is licensed for
+            commercial
+            work. We've done the hard work, hand-selecting these typefaces and presenting them in an easy-to-use format.
+            Here
+            are some of our favorites Free fonts have met their match. We know how hard it is to find quality freeware
+            that
+            is
+            licensed for commercial work. We've done the hard work, hand-selecting these typefaces and presenting them
+            in an
+            easy-to-use format. Here are some of our favorites。
+        </main>
+        <footer>
+            <p>Site name footer</p>
+            <p>Site name footer</p>
+        </footer>
+    </div>
+</div>
+<div>
+    ### `flex: 1;`
+    <p>
+        使用弹性盒子布局经常会用到一个属性flex:1，这个属性其实是三个属性的缩写形式:flext-grow、flex-shirk和flex-basic，三个的默认值分别是flext-grow:0
+        ,flex-shirk:1,flex-basic:auto。而flext:1 展开后是这样的：flex:1 1 0%。注意，并不是 flex:1 1 auto
+        奥,虽然就差0%与auto不同，但这两者区别确是很大的，待我娓娓道来~~~
+    </p>
+    <p>
+        使用弹性盒子布局经常会用到一个属性flex:1，这个属性其实是三个属性的缩写形式:flext-grow、flex-shirk和flex-basic，三个的默认值分别是flext-grow:0
+        ,flex-shirk:1,flex-basic:auto。而flext:1 展开后是这样的：flex:1 1 0%。注意，并不是 flex:1 1 auto
+        奥，虽然就差0%与auto不同，但这两者区别确是很大的，待我娓娓道来~~~
+    </p>
+</div>
+
+
+</body>
+</html>
