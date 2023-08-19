@@ -4,7 +4,385 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./src/images/icon.png" type="image/x-icon">
     <title>test</title>
+    <!--为了减少没有样式的时间,我直接把css编译后写在这-->
+    <style>
+        .container {
+            padding-bottom: 15rem;
+            background: #f5f7f7;
+        }
+
+        .container .form {
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+        }
+
+        .container .form .title {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            font-size: 20px;
+            color: #01559d;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .container .form .inputLim {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container .form .inputLim .input {
+            margin-bottom: 20px;
+        }
+
+        .container .form .inputLim .input, .container .form .inputLim .input2 {
+            display: flex;
+            width: 600px;
+            justify-content: center;
+            position: relative;
+        }
+
+        .container .form .inputLim .input img, .container .form .inputLim .input2 img {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            width: 25px;
+            height: 25px;
+        }
+
+        .container .form .inputLim .input input, .container .form .inputLim .input2 input {
+            padding-left: 43px;
+            display: flex;
+            width: 65%;
+            color: #d2cccc;
+            height: 3rem;
+            border: 1px solid #d2cccc;
+        }
+
+        .container .form .inputLim .input input:focus, .container .form .inputLim .input2 input:focus {
+            border: 1px solid #d2cccc;
+            outline: none;
+        }
+
+        .container .form .selections {
+            display: flex;
+            flex-direction: row;
+            width: 77%;
+            margin: 0 auto;
+            justify-content: space-between;
+        }
+
+        .container .form .selections .selectItem {
+            display: flex;
+            flex-direction: row;
+            margin-top: 1rem;
+            align-items: center;
+        }
+
+        .container .form .selections .selectItem .radio {
+            margin-right: 0.3rem;
+            display: flex;
+            width: 15px;
+            height: 15px;
+            appearance: none;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+        }
+
+        .container .form .btnLim {
+            display: flex;
+            flex-direction: column;
+            width: 77%;
+            margin: 1rem auto;
+        }
+
+        .container .form .btnLim .button {
+            background: #01559d;
+            border-radius: 3px;
+            color: #ffffff;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 3rem;
+        }
+
+        .container .form .text {
+            display: flex;
+            flex-direction: column;
+            width: 77%;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container .list {
+            display: flex;
+            flex-direction: column;
+            padding-left: 20px;
+        }
+
+        .container .list .title {
+            font-size: 20px;
+            color: #01559d;
+            padding-bottom: 1rem;
+        }
+
+        .container .list .listItem {
+            flex: 1;
+            border-top: 1px solid #01559d;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .container .list .listItem ul li:nth-child(1) {
+            padding-left: 10px;
+        }
+
+        .container .list .listItem ul li:nth-child(1):before {
+            content: '•';
+            margin-right: 1rem;
+        }
+
+        .container .list .listItem ul li {
+            line-height: 25px;
+            padding-left: 15px;
+        }
+
+        .container .list .listItem:last-child {
+            border-bottom: 2px solid #01559d;
+        }
+
+        .header {
+            align-items: center;
+            background: #01559d;
+            color: #FFFFFF;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .header .left {
+            user-select: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .header .left .icon {
+            margin-right: 10px;
+        }
+
+        .header .left .icon img {
+            border-radius: 50%;
+        }
+
+        .header .left .text {
+            font-size: 25px;
+        }
+
+        .header .split {
+            margin-left: 10px;
+            margin-right: 10px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 25px;
+        }
+
+        .header .right {
+            user-select: none;
+        }
+
+        .header .right .text {
+            font-size: 20px;
+        }
+
+        .footer {
+            min-height: 3rem;
+        }
+
+        .footer .text {
+            padding-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body {
+            background: #dfdfdf;
+        }
+
+        @media screen and (min-width: 700px) and (max-width: 1600px) {
+            .container, .header {
+                padding-left: 100px;
+                padding-right: 100px;
+            }
+
+            .header {
+                height: 50px;
+            }
+
+            .form {
+                padding-bottom: 20px;
+            }
+
+            .list {
+                margin-top: 2rem;
+                padding-left: 0 !important;
+            }
+
+            .input, .input2 {
+                width: 400px !important;
+            }
+
+            .input img, .input2 img {
+                left: 59px !important;
+            }
+        }
+
+        @media screen and (min-width: 1600px) {
+            .container {
+                padding-top: 4rem;
+                padding-left: 360px;
+                padding-right: 360px;
+                display: flex;
+                flex-direction: row;
+                height: 70vh;
+            }
+
+            .container .form {
+                width: 400px;
+                height: 430px;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+
+            .container .list {
+                flex: 1;
+                height: fit-content;
+            }
+
+            .input, .input2 {
+                width: 500px !important;
+            }
+
+            .input img, .input2 img {
+                left: 75px !important;
+            }
+
+            .header {
+                padding-left: 360px;
+                padding-right: 360px;
+                height: 70px;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            .container, .header {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .form {
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+            }
+
+            .input, .input2 {
+                width: 400px !important;
+            }
+
+            .input img, .input2 img {
+                left: 59px !important;
+            }
+
+            .container {
+                padding-bottom: 100px;
+            }
+
+            .container .list {
+                padding-left: 0 !important;
+            }
+
+            .header {
+                height: 4rem;
+            }
+
+            .header .icon > img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .header .left .text {
+                font-size: 18px !important;
+            }
+
+            .header .right .text {
+                font-size: 15px !important;
+            }
+
+            .footer {
+                height: 5rem;
+            }
+        }
+
+        * {
+            transition: 0.5s;
+        }</style>
+    <style>
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+            text-decoration: none;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+            font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        blockquote, q {
+            quotes: none;
+        }
+
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+
+    </style>
 </head>
 
 <body>
