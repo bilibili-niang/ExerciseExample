@@ -1,5 +1,5 @@
-import "../css/index.less";
-import "../css/reset.css";
+import "../index.less";
+import "../reset.css";
 
 
 
