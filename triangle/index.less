@@ -1,0 +1,38 @@
+body {
+  padding-top: 100px;
+}
+
+@width: 50px;
+
+div {
+  position: relative;
+  background-color: black;
+  margin: 0 auto;
+}
+
+div:before,
+div:after {
+  content: '';
+  position: absolute;
+  background-color: inherit;
+}
+
+div,
+div:before,
+div:after {
+  width: @width;
+  height: @width;
+  border-top-right-radius: 30%;
+}
+
+div {
+  transform: rotate(-90deg) skewX(-30deg) scale(1, .866);
+}
+
+div:before {
+  transform: rotate(-135deg) skewX(-45deg) scale(1.414, .707) translate(0, -50%);
+}
+
+div:after {
+  transform: rotate(135deg) skewY(-45deg) scale(.707, 1.414) translate(50%);
+}
